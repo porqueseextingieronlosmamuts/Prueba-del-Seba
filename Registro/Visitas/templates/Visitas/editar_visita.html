@@ -6,16 +6,16 @@
 
 {% block content %}
   <div class="max-w-2xl mx-auto">
-    <div class="bg-white mb-4 p-6 rounded-lg border border-gray-200">
-      <h1 class="text-3xl font-bold text-gray-800 mb-6">Editar visita</h1>
-      <p class="text-sm text-gray-600">Complete el siguiente formulario para modificar la visita (Los campos en rojo son obligatorios wue).</p>
+    <div class="bg-indigo-50 mb-4 p-6 rounded-lg border border-indigo-200">
+      <h1 class="text-3xl font-bold text-indigo-800 mb-6">Editar visita</h1>
+      <p class="text-sm text-indigo-600">Complete el siguiente formulario para modificar la visita (Los campos en rojo son obligatorios).</p>
     </div>
-    <form method="post" class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+    <form method="post" class="bg-indigo-50 p-8 rounded-lg shadow-lg border border-indigo-200">
       {% csrf_token %}
 
       <!-- Campo Nombre -->
       <div class="mb-6">
-        <label for="{{ form.nombre.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">{{ form.nombre.label }}</label>
+  <label for="{{ form.nombre.id_for_label }}" class="block text-sm font-medium text-indigo-700 mb-2">{{ form.nombre.label }}</label>
         {{ form.nombre }}
         {% if form.nombre.errors %}
           <div class="mt-2 text-sm text-red-600">{{ form.nombre.errors }}</div>
@@ -24,7 +24,7 @@
 
       <!-- Campo Rut -->
       <div class="mb-6">
-        <label for="{{ form.rut.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">{{ form.rut.label }}</label>
+  <label for="{{ form.rut.id_for_label }}" class="block text-sm font-medium text-indigo-700 mb-2">{{ form.rut.label }}</label>
         {{ form.rut }}
         {% if form.rut.errors %}
           <div class="mt-2 text-sm text-red-600">{{ form.rut.errors }}</div>
@@ -33,26 +33,18 @@
 
       <!-- Campo Motivo de Visita -->
       <div class="mb-6">
-        <label for="{{ form.motivo_de_visira.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">{{ form.motivo_de_visita.label }}</label>
+  <label for="{{ form.motivo_de_visita.id_for_label }}" class="block text-sm font-medium text-indigo-700 mb-2">{{ form.motivo_de_visita.label }}</label>
         {{ form.motivo_de_visita }}
         {% if form.motivo_de_visita.errors %}
           <div class="mt-2 text-sm text-red-600">{{ form.motivo_de_visita.errors }}</div>
         {% endif %}
       </div>
 
-      <!-- Campo hora de entrada y salida -->
-      <div class="mb-6">
-        <label for="{{ form.hora_de_entrada_y_salida.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-2">{{ form.hora_de_entrada_y_salida.label }}</label>
-        {{ form.hora_de_entrada_y_salida }}
-        {% if form.hora_de_entrada_y_salida.errors %}
-          <div class="mt-2 text-sm text-red-600">{{ form.hora_de_entrada_y_salida.errors }}</div>
-        {% endif %}
-      </div>
 
       <!-- Botones -->
-      <div class="flex items-center justify-end space-x-4 pt-6 border-t border-gray-200">
-        <a href="{% url 'lista_visitas' %}" class="hover:scale-105 transition-all ease-in inline-flex items-center px-6 py-3 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition duration-200">Cancelar</a>
-        <button type="submit" class="hover:scale-105 transition-all ease-in inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-200">Actualizar visita</button>
+      <div class="flex items-center justify-end space-x-4 pt-6 border-t border-indigo-200">
+        <a href="{% url 'lista_visitas' %}" class="inline-flex items-center px-6 py-3 border border-indigo-300 text-sm font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-200">Cancelar</a>
+        <button type="submit" class="hover:scale-105 transition-all ease-in inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-200">Actualizar visita</button>
       </div>
     </form>
   </div>

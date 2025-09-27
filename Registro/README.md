@@ -3,13 +3,13 @@
 Este proyecto es una aplicación web desarrollada con Django para gestionar el registro de visitas. Permite crear, listar, editar y eliminar registros de visitas, almacenando la información en una base de datos SQLite.
 
 ## ¿Qué hace?
-- Permite registrar nuevas visitas con datos relevantes (nombre, motivo, hora de entrada y salida, etc.).
+- Permite registrar nuevas visitas con datos relevantes (nombre, motivo, hora de entrada y salida, etc.). La hora de salida se calcula automáticamente sumando 2 horas a la hora de entrada.
 - Muestra una lista de todas las visitas registradas.
 - Permite ver el detalle de cada visita.
 - Permite editar y eliminar visitas existentes.
 
 ## ¿Cómo funciona?
-- **Backend:** Utiliza Django como framework principal. La lógica de negocio está en la app `Visitas`, que contiene modelos, vistas, formularios y URLs.
+- **Backend:** Utiliza Django como framework principal. La lógica de negocio está en la app `Visitas`, que contiene modelos, vistas, formularios y URLs. El modelo `Visita` incluye una propiedad que muestra la hora de entrada y la hora de salida (2 horas después de la entrada) en un solo campo para facilitar la visualización.
 - **Base de datos:** Usa SQLite por defecto (`db.sqlite3`).
 - **Frontend:** Utiliza plantillas HTML ubicadas en `Visitas/templates/Visitas/` para mostrar la información y formularios al usuario.
 - **Rutas:** Las URLs están definidas en `Registro/urls.py` y `Visitas/urls.py`.

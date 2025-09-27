@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Visita
+from django.utils import timezone
 from .forms import VisitaForm
 
 def lista_visitas(request):
-    visitas = Visita.objects.all()
+    hoy = timezone.now().date()
+    visitas = Visita.objects.filter(hora_de_entrada_y_salida__date=hoy)
     return render(request, 'visitas/lista_visitas.html', {'visitas': visitas})
 
 def detalle_visita(request, id):
